@@ -29,14 +29,15 @@ console.log(chainMap(4, square, half));         // 8
 console.log(chainMap(4, half, square));         // 4
 *******************************************************************************/
 
-let chainMap = function() {
-
+let chainMap = function (value, func1, func2, func3) {
+	if (func2 === undefined && func3 === undefined) {
+		return func1(value);
+	} else if (func3 === undefined) {
+		return func2(func1(value));
+	} else {
+		return func3(func2(func1(value)));
+	}
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = chainMap;
