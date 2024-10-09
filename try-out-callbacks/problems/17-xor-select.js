@@ -31,14 +31,22 @@ console.log(
 // [ 'art', 'app', 'buttery' ]
 *******************************************************************************/
 
-let xorSelect = function() {
+let xorSelect = function (array, func1, func2) {
+	let selected = [];
 
+	for (let i = 0; i < array.length; i++) {
+		const element = array[i];
+
+		if (
+			(func1(element) && !func2(element)) ||
+			(func2(element) && !func1(element))
+		) {
+			selected.push(element);
+		}
+	}
+
+	return selected;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = xorSelect;
