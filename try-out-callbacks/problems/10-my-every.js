@@ -21,14 +21,17 @@ console.log(myEvery(['book', 'door'], hasO));           // true
 console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 *******************************************************************************/
 
-let myEvery = function() {
+let myEvery = function (array, func) {
+	for (let i = 0; i < array.length; i++) {
+		const element = array[i];
 
+		if (!func(element)) {
+			return false;
+		}
+	}
+
+	return true;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = myEvery;
