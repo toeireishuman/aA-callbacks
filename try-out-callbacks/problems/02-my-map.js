@@ -16,14 +16,17 @@ let result2 = myMap(['run', 'Forrest'], function (el) {
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 *******************************************************************************/
 
-let myMap = function() {
+let myMap = function (array, func) {
+	let newArray = [];
 
+	for (let i = 0; i < array.length; i++) {
+		const element = array[i];
+		const result = func(element, i);
+		newArray.push(result);
+	}
+
+	return newArray;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = myMap;
