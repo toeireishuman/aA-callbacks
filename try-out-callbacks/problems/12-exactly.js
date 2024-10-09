@@ -27,14 +27,19 @@ console.log(result4); // true
 
 *******************************************************************************/
 
-let exactly = function() {
+let exactly = function (array, number, func) {
+	let count = 0;
 
+	for (let i = 0; i < array.length; i++) {
+		const element = array[i];
+
+		if (func(element)) {
+			count++;
+		}
+	}
+
+	return count === number;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = exactly;
